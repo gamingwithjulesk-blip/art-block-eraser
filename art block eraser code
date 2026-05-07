@@ -1,4 +1,8 @@
-import random  
+from ast import List
+from numbers import Number
+import random
+from tkinter import messagebox, simpledialog
+from turtle import color  
 miscellaneous=["a cat", "a dog", "a bird", "a fish", "a robot", "a unicorn", "a dragon", "a mermaid", "a superhero", "a monster" "an alien", "a wizard", "a knight", "a princess", "a pirate" "a donkey" "lepracuan" "a ghost" "a zombie" "a vampire" "a werewolf" "a fairy" "a gnome" "a troll" "a giant" "horse" "panda" "blueberry" "banana" "teddybears" "a rainbow" "a river" "a car" "a mobkey" "a rock" "a crystal" "cupcake" "cake" "brownie" "cookie" "book" "bridge" "guitar" "piano" "violin" "train" "lake" "moutain" "popsicle" "docter", "nurse" ,"teacher" ,"student" ,"chef" ,"artist" ,"dancer" ,"singer" ,"athlete" ,"scientist","astronaut", "explorer" ,"inventor", "writer" ,"poet" ,"philosopher", "king", "queen" ,"prince" ,"princess","fictonal cheracter", "historical figure", "cityscape", "chocalate","ramen", "pizza", "sushi", "burger", "ice cream", "donut", "pasta", "salad", "sandwich", "steak", "taco", "curry", "noodles", "soup", "bread", "fruit", "vegetable", "dessert", "beverage", "lemons" , "oranges", "grapes", "watermelon", "pineapple", "strawberry", "blueberry", "raspberry", "blackberry", "kiwi", "mango", "papaya", "peach", "pear", "plum", "coconut", "avocado", "carrot", "broccoli", "spinach", "kale", "lettuce", "cabbage", "cauliflower", "zucchini", "eggplant", "pepper", "onion", "garlic", "bear", "butterfly", "moth", "ant", "bee", "spider", "snail", "worm", "frog", "lizard", "snake", "turtle", "rabbit", "hamster", "guinea pig", "mouse", "rat", "squirrel", "deer", "fox", "wolf", "bear", "lion", "tiger", "elephant", "giraffe", "zebra", "monkey", "gorilla", "chimpanzee", "orangutan", "panda", "koala", "kangaroo", "wallaby", "platypus", "sloth", "armadillo", "anteater", "hedgehog", "porcupine", "otter", "beaver", "raccoon", "skunk", "badger", "weasel", "mole", "shrew", "bat ", "dolphin", "whale", "seal", "sea lion", "octopus", "squid", "jellyfish", "starfish", "coral", "sea turtle", "seahorse", "crab", "lobster", "shrimp", "clam", "oyster", "mussel", "scallop", "snail","cactus", "greek god" "ukulele" "flute" "statue" "tambiorien" "banjo" "mpael tree" "willow tree" "lilly of the valley" "rose" "tuliup" "daisy" "calla lilly" "gerber daisys" "acorn" "paint pens" "lamp" "compass" "tuba" "trombone" "belt" "candle" "animal mask" "paw gloves" "ikea alien" "dandilion" "bandana" "scarf" "rubber duck" "canada goose" "neon sign" "pilon" "street sign" "plushie" "phone" "snow globe" "scrunchie" "speaker" "astronaute helmet" "eneamal pin" "blanket" "nail polish" "squishy" "hand sanitizer" "flag" "barbeque" "magenet" "sewing machien" "sticky note" "mushroom" "willow tree" "blue bells" "dirt" "notebook" "dvd" "cd" "deoderent" "perfume" "skin care" "mascara" "concelar" "blush" "lipgloss" "lip sick" "eyeliner" "eye shawdow" "lip liner" "feather" "bone" "purse" "tape" "hot glue gun" "dnd dice" "drums" "ruler" "sketchbook" "paints" "mints" "jumper" "black light" "ghost hunting equipment" "grapes" "wine" "apple juice" "orange juice" "cranberry juice" "ramen" "alfredo" "corsaint" "ham" "pinapple" "coke"  "cookies" "rose" "bell" "crystals" "bucket hat" "rake" "hairbrush" "happy meal" "clock" "pocket watch" "speaker" "bubble stick" "headband" "bucket" "key" "lamp" "digital camera" "poloroid camara" "nintendo" "fork" "bowl" "gumball" "pizza" "radio" "picnic blanket" "jewlery" "mp3 player" "record player" "cd player" "vcs player" "couch" "bed" "refrigerator" "dresser" "desk" "floor lamp" "celling fan" "shelf" "book case" "book shelf" "tv" "oven" "sink" "toilet" "shower" "cliff" "canyon" "pantry" "pillow" "comfiter" "toy box" "wagon" "road" "shell" "conch" "phone box" "boat" "fire place" "forest" "rain forest" "cartoon" "sidewalk chalk" "dress" "suit" "pot" "pan" "water park" "park" "movie theater" "zoo" "baseball dimond" "football field" "basket ball court" "gymnastics gym" "swimming pool" "pond" "river" "lake" "wand" "cloak" "ballon" "clouds" "rain drop" "skip rop" "barn" "pyramid" "toothbrush" "bike" "motercycle" "running" "sprinting" "jello" "mall" "jungle" "dessert" "mail" "envolope" "coding" "binder" "crop top" "fur coat" "palm leaf" "ceramic" "potery wheel" "camera" "video camera" "bathroab" "skincare" "throw blanket" "throw pillow" "veil" "shower curtain" "hair clip" "scrunchie" "lip gloss" "poster" "bag" "action figure" "doll" "telescope" "face mask" "knife" "spray paint" "mittens" "dreamcatcher" "baby rattle" "reading glasses" "desk" "basket ball net" "hockey net" "soccer net" "calender" "garlend" "banner" "part hat" "ballon" "pedulum" "necklace" "bracelt" "jewlery" "braces" "car keys" "sewing machien" "washing machien" "dryer" "confetti" "cutting mat" "paint markers" "acrylic markers" "watercolor markers" "crayons" "oil pastels" "water color pallet" "watercolor pencils" "pencil" "jellybeans" "pepper sprayn" "falshlight" "batteries" "mason jar" "dresser" "closet" "frying pan" "plant pot" "sunglasses" "beaker" "speaker" "swing" "swimming goggles" "muffin tin" "hay" "kayak" "paddles" "flippers" "feather" "bird feader" "cake pan" "kettle" "surf bourd" "skatebourd" "text book" "birdcage" "skip rope" "side walk chalk" "buttons" "keybourd" "cigarett" "arcade machien" "animal ear headband" "hair extension" "crochet hook" "yarn" "duna" "throw blanket" "laundry basket" "screw driver" "tool box" "wrench" "drill" "brick" "hand saw" "broom" "vacum" "mop" "bucket" "sponge" "spray bottle" "rag" "towel" "house coat" "lychee" "smoothie" "exacto" "sqweegee" "bubbles" "tech deck"]              
 actions=["jumps", "runs", "flies", "swims", "sings", "dances", "laughs", "cries", "sleeps", "eats", "sprints", "hides" ,"explores", "paints", "builds", "plays" ,"cowers", "whispers", "screams" ,"rolls" ,"glides" ,"explodes" ,"melts" ,"stabing", "licking", "singing", "yelling", "sneaking", "hopping", "skipping", "climbing", "diving", "surfing", "meditating", "juggling", "gardening", "cooking", "cleaning", "writing", "reading", "drawing", "photographing", "coding", "dancing in the rain", "flying through space", "swimming in a sea of stars", "at a royal palace", "in a flower filled field", "in a cozy cabin","in a factory", "next to a stream", "in a new home", "on a beach" "in a castle" "in the woods" "in an underwater world" "in a lake monsters home" "in a cave full of crystals" "in an abandoned building" "in a hospital" "in a lab" "in a insane asylum" "in a gym" "in a rock climbing gym" "in a sensory room" "in an airport" "at a parade" "at a protest" "at a sports game" "at a concert" "in a mine" "in a concert hall" "at a medival festival" "anime style" "pop art style" "pencil sketch" "street art style" "realistic" "kawai" "decora" "grunge" "goth" "emo" "dark" "gore" "goblin core" "forestcore" "preppy" "pastel"]  
 skin=["brown" "towhead" "viltilago" "olive" "pale white" "honey" "yellow" "purple" "burnt siena" "sun burnt" "tan" "caramel" "ebony" "alabaster" "bronze" "copper" "peachy" "rosy" "ashy" "porcelain" "mahogany" "sable" "umber" "sepia" "sienna" "tan", "chocolate", "coffee", "mocha", "latte", "caramel", "hazelnut", "almond", "cinnamon", "clay", "sand", "beige", "taupe", "mushroom", "fawn", "buff", "ecru", "oatmeal", "putty", "greige", "ash", "slate", "steel", "charcoal", "graphite", "onyx", "ebony", "obsidian", "jet black", "snow white", "ivory", "cream", "alabaster", "porcelain", "pearl", "opal", "marble", "granite", "limestone", "sandstone", "slate", "basalt", "lava rock", "volcanic ash", "moon dust", "star dust", "galaxy gray", "cosmic brown", "nebula navy", "supernova silver", "quasar quartz", "black hole black", "white dwarf white" "honey comb skin" "acne"] 
@@ -15,106 +19,115 @@ jacket=["blouse" "leather jacket" "knit sweater" "cardigen" "wind braker" "rain 
 bottoms=["black jeans" "blue jeans" "pleated skirt" "mini skirt" "kahkis" "cargo pants" "lightwash blue jeans" "maxi skirt" "shorts" "sweatpants" "dress pants" "overalls" "leggings" "tutu" "culottes" "joggers" "pencil skirt" "denim skirt" "leather pants" "corduroy pants" "palazzo pants" "harem pants" "capri pants" "skater skirt" "wrap skirt" "asymmetrical skirt" "high waisted jeans" "low rise jeans" "wide leg pants" "skinny jeans" "flare jeans" "bootcut jeans" "overalls" "joggers" "sweatpants" "dress pants" "cargo pants" "leggings" "tutu" "culottes" "harem pants" "capri pants" "skater skirt" "wrap skirt" "asymmetrical skirt" "ripped jeans" "pleeted skirt" "fleece pants" "pj pants" "snow pants" "slush pants" "flares" "bell bottom jeans" "shorts overalls" "coveralls"] 
 shoes=["converse" "doc martins" "flip flops" "rubber boots" "hiking boots" "running shoes" "crocs" "water shoes" "knee highs" "sneakers" "heels" "sandals" "loafers" "clogs" "ballet flats" "oxford shoes" "platform shoes" "combat boots" "slippers" "watershoes" "combat boots" "light up sneakers" "basket ball shoes" "ballet flats" "pointe shoes" "snow boots" "muck boots" "hightops" "flats" "jellys" "marry janes" "cowboy boots" "shower shoes" "velcro sneakers" "stiletos" "slip on converse" "slip on" "light up shoes" "flying shoes" "soccer kleets" "skatebourding shoes" "towel slippers" "platforms" "hourse riding boots" "thigh high boots" "clown shoes" "paw converse" "uggs" "hiking boots" "rain boots" "loafers" "platforms"] 
 accesories=["pearls" "bucket hat" "tote bag" "musical instrement" "book" "backpack" "studed belt" "spike cuffs" "enamel pins" "sensory layard" "pride flag cape" "messenger bag" "paint pallet" "water bottle" "ita bag" "kandi" "puca shells" "bandana" "fedora" "cowboy hat" "barae" "baseball cap" "beanie" "hijab" "watercolor palette" "glasses" "purse" "bowtie" "tie" "a tail" "keychain" "feather" "earings" "hoops" "hair bow" "headband" "crossbody bag" "notebook" "binder" "plant" "water bottle" "hobby horse" "stuffed animal" "paci" "school bag" "flower crown" "top hat" "lanyard" "handheld video game" "flower clip" "rainbow loom braclets" "choker" "scarf" "witch hat" "key necklace" "bangles" "jewlery" "sword" "coffee" "flowers" "pencil case" "book bag" "pins" "patches" "mask"]
-colour pallets=["purple, black, orange" "teal, pink, yellow" "green, yellow" "orange, pink, yellow" "blue, purple, silver" "red, black, white" "pastel rainbow" "neon colors" "earth tones" "monochromatic" "complementary colors" "analogous colors" "triadic colors" "tetradic colors" "warm colors" "cool colors" "neutral colors" "the colors of 1 flag" "the colors of 2 flags" "the colors of 3 flags" "3 randomly selected colors" "forest colors" "blue, pink, orange" "pink, green, and orange" "bold colors" "only complimentary colors" "orange, blue ,purple" "gray, white, black" "green, pink, yellow" "purple, pink, blue" "green, purple, orange" "pink, red, white" "yellow, pink green" "orange, teal, pink" "red, black, silver" "pink,green,purple" "teal, yellow, green"]  
+colorpallets=["purple, black, orange" "teal, pink, yellow" "green, yellow" "orange, pink, yellow" "blue, purple, silver" "red, black, white" "pastel rainbow" "neon colors" "earth tones" "monochromatic" "complementary colors" "analogous colors" "triadic colors" "tetradic colors" "warm colors" "cool colors" "neutral colors" "the colors of 1 flag" "the colors of 2 flags" "the colors of 3 flags" "3 randomly selected colors" "forest colors" "blue, pink, orange" "pink, green, and orange" "bold colors" "only complimentary colors" "orange, blue ,purple" "gray, white, black" "green, pink, yellow" "purple, pink, blue" "green, purple, orange" "pink, red, white" "yellow, pink green" "orange, teal, pink" "red, black, silver" "pink,green,purple" "teal, yellow, green"]  
 animals=["polar bear" "black bear" "panda bear" "grizzly bear" "spirit bear" "sloth bear" "spectacle bear" "koala" "orca" "beluga" "blue whale" "great white shark" "lemon shark" "bull shark" "clown fish" "puffer fish" "jellyfish" "monkey" "orangutan" "spider monkeys" "spider" "beetle" "bee" "fruit fly" "earth worm" "hawk" "crow" "chickade" "cardinal" "blue jay" "racoon" "wolf" "rabbit" "bunny" "rat" "mouse" "corn snake" "rattle snake" "king snake" "viper" "crocodile" "aligator" "frog" "toad" "butterfly" "moth" "duck" "swan" "cannary" "calico cat" "russian blue" "simeas cat" "tabby cat" "hammerhead shark" "golden doodle" "poodle" "toy pooble" "pug" "fruit bat" "whale shark" "greenland shark" "unicorn" "dinosaur" "goose" "river otter" "sea otter" "raven" "dolphin" "sea turtle" "barn owl" "snowy owl" "tiger" "snail" "highland cow" "axalotal" "hedghog" "pourqipine" "canada goose" "horse" "husky" "cockerspanial" "basset hound" "buck" "doe" "mallard duck" "grey cat" "grey hound" "blood hound" "wasp" "koi fish" "red fox" "cross fox" "fennec fox" "chimpanze" "bearded dragon" "lepored geko" "lepored" "cheeta" "donkey" "ferret" "weasel" "poison dart frog" "sea turtle" "tortoise" "shrew" "humpback whale" "moon jellyfish" "lions main jellyfish" "banana slug" "elaphant" "buffalo" "corigi" "pig" "hippo" "giraffe" "seal" "sea lion" "lepord seals" "dove" "pigeon" "red panda" "salmon" "chiken" "falcon" "caterpiller" "sloth" "playtypus" "bull" "grey wolf" "finch" "stingray" "mantray" "eagle ray" "redwing black bird" "octopus" "lamb" "sheep" "parrot" "parakeet" "peinguin" "black cat" "squirel" "chipmunk" "peacock" "ram" "mountin goat" "kangaroo" "lion" "lioness" "rhino" "flamingo" "blobfish" "seahorse" "ringtailed lemur" "guine pig" "beaver" "skunk" "badger" "mole" "armidillo" "lobster" "squid" "crab" "shrimp" "clam" "mussel" "scallop" "slug" "polecat" "german shepard" "water buffalo" "goose" "hare" "elk" "llama" "alpaca" "jaguiar" "crane" "morning dove" "garder snake" "sword fish" "goats" "pigmy goats" "golden doodle" "kitten" "dragon" "white tiger" "polar bears" "wallabe" "quoka" "hen" "leaf bug" "blue jay" "chikadee" "tree frog" "alphaca" "eel" "tuna" "beta fish" "Queen angelfish" "flounder" "flying squirl" "dodo" "ostrich" "tasmanian devil" "flying fish" "orca" "cokerspanial" "golden retriver" "black lab" "great pyrenese" "australian shepeard" "canada goose" "chick" "bob cat" "mahi mahi" "Aardvark" "Aardwolf" "Acorn Woodpecker" "Adderfish" "Adélie Penguin" "Admiral Butterfly" "African Bullfrog" "African Bush Elephant" "Africanized Bee" "Akita" "Alalā" "Albacore Tuna" "Albatross" "Aldabra Giant Tortoise" "Alder Flycatcher" "Alligator" "Alpaca" "Alver" "American Bison" "American Sparrow" "Amphipod" "Amur Leopard" "Amur Tiger" "Anaconda" "Andean Condor" "Andean Goose" "Angelfish" "Angelshark" "Anglerfish" "Ant" "Antarctic Krill" "Anteater" "Antelope" "ape" "Arapaima" "Araucana" "Arctic Fox" "Asian Elephant" "asp" "Attenborough’s Long-Beaked Echidna" "Australian Shepherd" "Australian Snake-Necked Turtle" "Axolotl" "Aye-Aye" "Azawakh" "Baboon" "badger" "bald eagle" "Banana Eel" "barn owl" "barn spider" "bass" "basset hound" "bat" "Bearded Dragon" "bee" "Belgian Malinois" "Beluga Whale" "Bengal Tiger" "betta fish" "bigeye" "bighorn sheep" "bindweed" "bison" "Black Labrador" "black mamba" "black rain frog" "black Rhinoceros" "black swan" "Black-Footed Ferret" "blobfish" "blue whale" "Boa Constrictor" "boar" "bobcat" "bonefish" "Border Collie" "Bottlenose Dolphin" "buffalo" "bull" "bull shark" "bulldog" "bullfrog" "Butterfly" "Butterfly Fish" "buzzard" "California Condor" "california kingsnake" "Camel" "canada goose" "cane rat" "cane spider" "Canebrake Rattlesnake" "Canine" "Caracara" "caraval" "Cardinal" "caribou" "Caspian Tiger" "cat" "Caterpillar" "catfish" "cattle" "Cetacean" "Chaffinch" "Chameleon" "cheeta" "Chickadee" "Chicken" "Chihuahua" "Chimpanzee" "chipmunk" "clownfish" "cobra" "codfish" "Condor" "Copperhead Snake" "coral" "coral snake" "Corgie" "cougar" "coyote" "crab" "Crabeater Seal" "Crocodile" "Cuttlefish" "Czechoslovakian Wolfdog" "Dachshund" "Darwin’s Frog" "deer tick" "diamond python" "Diamondback Moth" "Dik-Dik" "dingo" "dodo" "dolphin" "donkey" "Dragonfly" "Duck-Billed Platypus" "Dungeness Crab" "Dutch Rabbit" "dzo" "eagle" "earthworm" "earwig" "Eastern Coral Snake" "Eastern Cottontail" "Eastern Diamondback Rattlesnake" "Eastern Lowland Gorilla" "eel" "egert" "Elephant Seal" "elk" "Emperor Penguin" "emu" "English Shepherd" "English Sparrow" "Exmoor Ponies" "Extremophiles" "Fainting Goat" "falcon" "Fallow Deer" "Fender’s Blue Butterfly" "fin whale" "Finch" "Finger Monkey" "firefly" "fish" "flamingo" "flea" "Flounder" "flying squrriel" "fox" "French Bulldog" "frog" "fruit bat" "fur seal" "Gaboon Viper" "Galapagos Barn Owls" "Galapagos Giant Tortois" "Galapagos Yellow Warbler" "Gazelle" "Geoduck" "Gharial Crocodiles" "Giant Squid" "Giant Tortoise" "Gibbon" "Golden Masked Owl" "Golden Mole" "Grackle" "Great Blue Heron" "Great Bustard" "Great Dane" "Greater One-Horned Rhino" "Green Frog" "Green Sea Turtle" "Greenback Cutthroat Trout" "Grey Wolf" "Greyhound" "Ground Squirrel" "Groundhog" "Guanaco" "guppy" "Haast’s Eagle" "Habu Snake" "Haddock" "Hagfish"]        
 food= ["pizza" "hamburger" "hotdog" "salad" "apple" "strawberry" "blueberry" "watermelon" "corn" "carrot" "tomato" "onions" "orange" "pasta" "mac and chees" "sheperds pie" "pie" "soup" "apple sause" "cookie" "brownie" "cake" "cupcake" "ice cream" "chocalate" "candy" "smoothie" "chips" "pop corn" "juice box" "raspberry" "blackberry" "chicken" "fish" "pork" "beef" "shawarma" "fajitas" "tortillas" "toast" "jam" "peanut butter" "butter" "waffles" "pancakes" "burrito" "taco" "cereal" "chicken nuggets" "french fries" "grilled cheese" "pad thai" "quesadilla" "tarts" "casaroll" "lasange" "shrimp" "scalop" "clam" "milk" "yogurt" "bagel" "cashew" "almonds" "peanut" "pickle" "lemon" "lime" "grape" "grapefruit" "mango" "peata" "sourdogh" "belgium bread" "cheese" "ice cream cone" "marshmallow" "s'mores" "whipped cream" "cherry" "crakers" "avacado" "gummys" "pomogranate" "papyaia" "honey" "pear" "coco" "hot chocalate" "soda" "cheeto" "chili" "rice" "steak" "pork chop" "sanwich" "scrambled eggs" "sunny side up eggs" "eggs" "bacon" "french toast" "pudding" "rice pudding" "jello" "creme brulle" "creme caramel" "caramel" "tofu" "cantalope" "honeydew" "kale" "asparagus" "beans" "peas" "ham" "milkshake" "turkey" "salami" "cauliflower" "meatball" "seaweed" "wafers" "mints" "goldfish" "muffin" "pumpkin" "eggroll" "springroll" "snow cone" "pop rocks" "licorice" "parfait" "brocoli" "corn" "rice cakes" "oatmeal" "oats" "olives" "donuts" "pecans" "hazelnuts" "water" "kiwi" "letuce" "fetta" "mozarella" "grahm crakers" "mushrooms" "peas" "lima beans" "bell peppers" "jalopenos" "macaroni" "sunflower seeds" "zucini" "greek salad" "kebab" "parmesan" "cinaoman roll" "quesadilla" "guacomole" "salsa" "gummybear" "gummyworm" "tea" "coffee" "lemon" "grapefruit" "lime" "apricot" "peach" "nan bread" "coconut" "popcorn" "potato" "chicken pot pie" "mashed potato" "tater tots" "stirfry" "corn dog" "rice noodle" "soy sauce" "chili pepper" "rasin" "crosiant" "brioche bun" "vannila" "gelato" "hot sauce" "granola" "granola bar" "pinapple" "anchovies" "sardine" "sausage" "candy cane" "cupcake" "slushie" "cherry tomato" "banana split" "fruit roll up" "pb&j" "dumplings" "cotton candy" "dates" "liver" "alfredo" "gum" "macaroni and cheese" "ceaser salad" "brownie" "tangirien" "curry" "omlet" "tuna" "baguett" "sushi" "quiche" "falafel" "backed bean" "gnocchi" "cabbage rolls" "cabagge" "risotto" "cheesecake" "fried chicken" "onion rings" "lobster" "fortune cookies" "key lime pie" "crab cake" "brushetta" "chicken balls" "sour cream" "barley" "beets" "chia seeds" "flaxseeds" "mint" "figs" "cranberries" "plum" "lentils" "spinach" "cauliflower" "oyeter" "macadamia nut" "wheat" "quinoa" "barley" "walnuts" "sweet potato" "celery" "ketchup" "pickles" "relish" "mustard" "elderberry" "yellow plums" "dandilions" "jellybeans" "stroopwaffles" "ghost peppers" "butter chicken" "Schweinshaxe" "braten" "lobster roll" "Karaage" "epaindnada" "pot stickers" "eclairs" "Croque Monsieur" "omalet" "hard boiled egg" "fried egg" "pastrami" "panini" "sub" "cider" "starbursts" "risotto" "onion rings" "slushie" "churos" "grapfruit" "blood orange" "tapioka pearls" "pepermint" "salmon" "caviar" "mushroom" "cherries" "belgium bread" "pumpernickle bread" "honey buutter toast" "whole grain bread" "caramel popcorn" "cabbage" "pickled turnips" "legumes" "kidney beans" "turkey breast" "eggplant" "sweet potato" "chickpeas" "pork roast" "flour" "sugar" "yeast" "baking powder" "baking soda" "cinnamon" "nutmeg" "cloves" "ginger" "vanilla extract" "maple syrup" "honey" "molasses" "corn syrup" "agave nectar" "stevia" "xylitol" "erythritol" "monk fruit sweetener" "squaush" "spagetti sqush" "jackfruit" "lychee" "cramberry" "cherimova" "caniry-melon" "papaya" "custard apple" "lotus root" "taro" "artichoke" "leek" "bamboo shoot" "bok choy" "choyote" "beets" "radish" "rutabegga"  "shirly temple" "pina colada" "pinapple" "acai" "buffalo wings" "black eyed peas" "angel food cake" "bundt cake" "borscht" "cream cheese" "crabcakes" "cassava" "creamsicle" "crawfish" "corn fritters" "cornbread" "couscous" "cobbler" "carrot cake" "custard" "coleslaw" "cannoli" "chili con carne" "chow mien noodles" "cheesesteak" " chapatis" "chutney" "chalupas" "Danish" "drumsticks" "deviled eggs" "dill pickles" "Dutch cookies" "dark chocolate" "dim sum" "dahl soup" "endive" "Eskimo pie" "escarole" "escargot" "English muffin" "Echinacea" "eggnog" "funnel cake" "fudge" "figs" "flapjacks" "frijoles" "fritters" "frosting" "fruitcake" "frankfurters" "Fig Newtons" "Fritos" " fiddlestick greens" "flaxseeds" "flax oil" "focaccia bread" "fudgicle" "Fasolada soup" "fried rice" "gelatin" "gingerbread" "gelato" "gravy" "gooseberry" "garbonzo" "granola" "graham crackers" "gyoza" "gumbo" "gazpacho" "gizzards" "goulash" "horseradish" "hoagie" "halibut" "huckleberries" "Hollandaise" "hummus" "hominy" "hash browns" "haggis" "iceberg lettuce" "Indian jujubee" "Italian bread" "ita palm" "Imitation crab" "Jujubes" "jambalaya" "kohlrabi" "kidney beans" "kumquat" "kielbasa" "Knorr soup" "kamut" "lima bean" "lentils" "linguine" "lamb" "liverwurst" "mince meat" "marmalade" "maraschino cherries" "minestrone" "margarine" "maple syrup" "mackerel" "miso" "manicotti" "martimonial cake" "mousse" "meatloaf" "masala" "millet" "moussaka" "nectarines" "nachos" "nuggets" "Nutter-Butter Cookies" "Nerds candy" "Neapolitan ice cream" "Necco Wafers" "okra" "Ovaltine" "ox tail" "parsnips" "popcorn" "pretzels" "popsicles" "persimmons" "Portabello mushrooms" "pine nuts" "perogies" "pimentos" "butternut squash" "pinto beans" "putanesca" "prawns" "poutine" "puffed wheat" "protein shakes" "protein bars" "pakora" "passionfruit" "porridge" "pilaf" "perch" "pollock" "potroast" "plum sauce" "pesto" "Peking duck" "paella" "pita bread" "polenta" "pate" "Pavlova" "pancetta" "quail" "quince" "quorn" "rutabaga" "rhubarb" "radish" "rye bread" "ravioli" "rigatoni" "ratatouille" "Ritz crackers" "rosehips" "romaine" "rooibos" "rice crackers" "roti" "red delicious" "rye crisp" "rice paper" "rootbeer float" "red lentils" "refried beans" "rissotto" "Reuben sandwich" "radicchio" "ricotta cheese" "romano cheese" "soybean" "swiss cheese" "spam" "succotash" "stuffing" "stromboli" "snow peas" "swordfish" "satsuma" "squid" "Sesame seeds" "Swiss chard" "satziki" "souvlaki" "sashimi" "spelt" "sesame oil" "spanokopita" "spinach dip" "sasparilla" "spumoni" "Spartan apples" "starfruit" "sweet potato" "stoned wheat crackers" "samosa" "Spanish rice" "jasmine rice" "snapper" "split peas" "scones" "stirfry" "sorbet" "sloppy joes" "string cheese" "souffle" "shish kabob" "shells" "sherbet" "shallot" "shark fin soup" "Shredded Wheat" "shortbread" "shortcake" "tapioca" "taffy" "tamale" "TV dinners" "tater tots" "tempura" "tempeh" "tofu" "tortellini" "triscuits" "tamarind" "tabbouleh" "teriyaki" "torte" "trifle" "truffle" "tahini" "thimbleberry" "upside down cake" "uglifruit" "unpasteurized milk" "venison" "veal" "vermicelli" "vichyssoise" "vanilla" "vegetable soup" "vakalolo" " vindaloo" "watercress" "wax bean" "wheat bread" "wings" "walleye fish" "wontons" "wasabi" "wild rice" "Waldorf Salad" "xmas cake" "xigua" "yam" "yellow squash" "yellow beans" "Yorkshire pudding" "yucca" "yautia" "yaki soba" "yiyantes" "ziti" "zwieback bread" "zabaglione sauce" "zander fish" "zours"]                
                          
 
 def generate_idea():
-   miscellaneous=random.choice(miscellaneous)
-    action=random.choice(actions)
-    style=random.choice(styles)
-    types=random.choice(types)
-    mood=random.choice(moods)
-    setting=random.choice(settings)
-    colors=random.choice(colors)
-    utensils=random.choice(utensils) 
-    hair=random.choice(hair)
-    skin=random.choice(skin)
-    eyes=random.choice(eyes)
-    tops=random.choice(shirt)
-    jacket=random.choice(jacket)
-    bottoms=random.choice(pants)
-    shoes=random.choice(shoes)
-    accesories=random.choice(accesories)
-    colour pallets=random.choice(colour pallets)
-    animals=random.choice(animals)
-    food=random.choice(food)
+    misc = random.choice(miscellaneous)
+    action = random.choice(actions)
+    style = random.choice(styles)
+    type_choice = random.choice(types)
+    mood = random.choice(moods)
+    setting = random.choice(settings)
+    color = random.choice(colors)
+    utensil = random.choice(utensils)
+    hair_style = random.choice(hair)
+    skin_tone = random.choice(skin)
+    eye_color = random.choice(eyes)
+    top = random.choice(tops)
+    jacket_choice = random.choice(jacket)
+    bottom = random.choice(bottoms)
+    shoe = random.choice(shoes)
+    accessory = random.choice(accesories)
+    color_pallet = random.choice(colorpallets)
+    animal = random.choice(animals)
+    food_item = random.choice(food)
 
-  return f"{subject} {action} {style} in {types} with a {mood} mood and {setting}."
-if __name__ == "__main__":    idea=generate_idea()
-    print("Here's a random art idea for you:")
-    print(idea)
-
-def on_regenarate()
+    return f"{misc} {action} {style} in {type_choice} with a {mood} mood and {setting}."
 idea=generate_idea()
-idea_label.config(text=idea)
+idea_label.config(text=idea) # type: ignore
 
-root =tk.Tk()
+root = tk.Tk() # type: ignore
 root.title("drawing idea generator")
 
-idea_label=tk.label(root, text=genarate_idea(),warplength=400,padx=10,pady=10)
+idea_label=tk.label(root, text=generate_idea(),warplength=400,padx=10,pady=10) # type: ignore
 idea_label.pack(pady=20)
 
-regen_button = tk.button(root, text="Regenerate", command=on_regenarate)
+regen_button = tk.button(root, text="Regenerate", command=on_regenarate) # type: ignore
 regen_button.pack(pady=10) 
 root.mainloop() 
 
- def add_item(self, category, item):
+ class DrawingIdeaLibrary:
+    def __init__(self):
+        self.subjects = miscellaneous
+        self.actions = actions
+        self.styles = styles
+        self.moods = moods
+        self.settings = settings
+        self.mediums = utensils
+
+    def get_all_categories(self):
+        return {
+            'subjects': self.subjects,
+            'actions': self.actions,
+            'styles': self.styles,
+            'moods': self.moods,
+            'settings': self.settings,
+            'mediums': self.mediums
+        }
+
+    def add_item(self, category, item):
         if category in self.get_all_categories():
             if item not in self.get_all_categories()[category]:
                 self.get_all_categories()[category].append(item)
                 return True
         return False
 
-         def remove_item(self, category, item):
+    def remove_item(self, category, item):
         if category in self.get_all_categories():
             if item in self.get_all_categories()[category]:
                 self.get_all_categories()[category].remove(item)
                 return True
         return False
 
-    def genaerate_idea(self):
+    def generate_idea(self):
         subject = random.choice(self.subjects)
         action = random.choice(self.actions)
         style = random.choice(self.styles)
         mood = random.choice(self.moods)
         setting = random.choice(self.settings)
         medium = random.choice(self.mediums)
-        return
-         f"Draw a {mood} {subject} {action} {style}, "
-            f"{setting}, using {medium}.
-            class drawing_idea_generator:
+        return f"Draw a {mood} {subject} {action} {style}, {setting}, using {medium}."
+
 
 class DrawingIdeaApp:
     def __init__(self, root):
         self.library = DrawingIdeaLibrary()
         self.root = root
         self.root.title("Drawing Idea Generator")
-
-     self.idea_label = tk.Label(root, text=self.library.generate_idea(), wraplength=400, padx=10, pady=10)
+        
+        self.idea_label = tk.Label(root, text=self.library.generate_idea(), wraplength=400, padx=10, pady=10)
         self.idea_label.pack(pady=20)
-
+        
         self.regen_button = tk.Button(root, text="Regenerate", command=self.on_regenerate)
         self.regen_button.pack(pady=10)
-
-           self.library_button = tk.Button(root, text="View/Edit Library", command=self.open_library_window)
+        
+        self.library_button = tk.Button(root, text="View/Edit Library", command=self.open_library_window)
         self.library_button.pack(pady=10)
-
-          def on_regenerate(self):
+    
+    def on_regenerate(self):
         idea = self.library.generate_idea()
         self.idea_label.config(text=idea)
-
-
+    
     def open_library_window(self):
         lib_win = tk.Toplevel(self.root)
         lib_win.title("Library Editor")
-
-        # here you would add widgets to view and edit the library categories and items
-
-          categories = self.library.get_all_categories()
+        
+        categories = self.library.get_all_categories()
         row = 0
-          for cat_name, items in categories.items():
+        for cat_name, items in categories.items():
             tk.Label(lib_win, text=f"{cat_name.capitalize()}:", font=("Arial", 12, "bold")).grid(row=row, column=0, sticky="w", padx=10, pady=5)
             row += 1
             listbox = tk.Listbox(lib_win, height=5, width=50)
@@ -122,50 +135,50 @@ class DrawingIdeaApp:
                 listbox.insert(tk.END, item)
             listbox.grid(row=row, column=0, columnspan=2, padx=10, pady=5)
             row += 1
-
-              add_button = tk.Button(lib_win, text="Add", command=lambda c=cat_name, lb=listbox: self.add_to_category(c, lb))
+            
+            add_button = tk.Button(lib_win, text="Add", command=lambda c=cat_name, lb=listbox: self.add_to_category(c, lb))
             add_button.grid(row=row, column=0, pady=5)
-           
-             remove_button = tk.Button(lib_win, text="Remove", command=lambda c=cat_name, lb=listbox: self.remove_from_category(c, lb))
+            
+            remove_button = tk.Button(lib_win, text="Remove", command=lambda c=cat_name, lb=listbox: self.remove_from_category(c, lb))
             remove_button.grid(row=row, column=1, pady=5)
             row += 1
-
-             def add_to_category(self, category, listbox):
+    
+    def add_to_category(self, category, listbox):
         item = simpledialog.askstring("Add Item", f"Enter new {category[:-1]}:")
         if item and self.library.add_item(category, item):
             listbox.insert(tk.END, item)
             messagebox.showinfo("Success", f"Added '{item}' to {category}.")
         elif item:
-        messagebox.showwarning("Warning", f"'{item}' already exists in {category}.")
-
-         def remove_from_category(self, category, listbox):
+            messagebox.showwarning("Warning", f"'{item}' already exists in {category}.")
+    
+    def remove_from_category(self, category, listbox):
         selected = listbox.curselection()
         if selected:
-          item = listbox.get(selected[0])
+            item = listbox.get(selected[0])
             if self.library.remove_item(category, item):
                 listbox.delete(selected[0])
                 messagebox.showinfo("Success", f"Removed '{item}' from {category}.")
-   else:
+        else:
             messagebox.showwarning("Warning", "Please select an item to remove.")
 
             if __name__ == "__main__":
     root = tk.Tk()
-    app = DrawingIdeaApp(root)
-    root.mainloop()
+   app = DrawingIdeaApp(root)
+  root.mainloop()
 
     import random
     import itertools 
 
     def generate_combination_ideas(word_lists, num_ideas=5):
 
-     Generate ideas by combining words from provided lists.
+     Generate_ideas_by_combining_words_from_provided_lists.
 
          Args:
-        word_lists (list of lists): Each sublist contains words of a category.
-        num_ideas (int): Number of combination ideas to generate.
+        word_lists (List of lists): Each sublist contains words of a category.
+        num_ideas (int): Number of combination ideas to generate. # type: ignore
 
          Returns:
-        list: List of combined strings.
+        list: List of combined strings. # type: ignore
          """
            ideas = []
     for _ in range(num_ideas):
@@ -182,7 +195,7 @@ class DrawingIdeaApp:
 
         Args:
         word_lists (list of lists): Each sublist contains words of a category.
-        max_combinations (int): Maximum number of combinations to return.
+        max_combinations (int): Maximum number of combinations to return. # type: ignore
         Returns:
         list: list of combined strings. 
         Returns:
@@ -222,20 +235,21 @@ class DrawingIdeaApp:
     for idea in all_ideas:
         print(f"- {idea}")
 
-    import random
-    import itertools
+import random
+import itertools
 
-    def generate_combination_ideas(word_lists, num_ideas=5):
+def generate_combination_ideas(word_lists, num_ideas=5):
     """
-    genararte all possible combinations of words from provided lists, limited by max_combinations. 
+    Generate all possible combinations of words from provided lists, limited by max_combinations. # type: ignore
 
-        Args:
-        word_lists (list of lists): Each sublist contains words of a category.
-        num_ideas (int): Number of combination ideas to generate.
+    Args:
+        word_lists (list of lists): Each sublist contains words of a category. # type: ignore
+        num_ideas (int): Number of combination ideas to generate. # type: ignore
 
-        returns:list: list of combined strings. 
-
-        ideas = []
+    Returns:
+        list: list of combined strings. # type: ignore
+    """
+    ideas = []
     for _ in range(num_ideas):
         combination = []
         for word_list in word_lists:
@@ -244,32 +258,30 @@ class DrawingIdeaApp:
         ideas.append(" ".join(combination))
     return ideas
 
-    def generate_all_possible_combinations(word_lists, max_combinations=10):
+def generate_all_possible_combinations(word_lists, max_combinations=10):
     """
-     Generate all possible combinations of words from provided lists, limited by max_combinations.
+    Generate all possible itertools.combinations of words from provided lists, limited by max_combinations. # type: ignore
 
-        Args:
-        word_lists (list of lists): Each sublist contains words of a category.
-        max_combinations (int): Maximum number of combinations to return.
+    Args:
+        word_lists (list of lists): Each sublist contains words of a category. # type: ignore
+        max_combinations (int): Maximum number of combinations to return. # type: ignore
 
-         Returns:
-        list: List of combined strings.
+    Returns:
+        list: List of combined strings. # type: ignore
     """
- if not word_lists:
-        return []
+ if not word_lists: return []. 
 
-         # Use itertools.product to get all combinations
+    # Use itertools.product to get all combinations
     all_combos = list(itertools.product(*word_lists))
     random.shuffle(all_combos)  # Shuffle to get random order
 
-     combinations = []
+    combinations = []
     for combo in all_combos[:max_combinations]:
         combinations.append(" ".join(combo))
 
-
     return combinations
 
-    # Example usage for drawing ideas
+# Example usage for drawing ideas
 if __name__ == "__main__":
     subjects = ["cat", "robot", "tree"]
     actions = ["dancing", "sleeping", "flying"]
@@ -277,240 +289,216 @@ if __name__ == "__main__":
 
     word_lists = [subjects, actions, styles]
 
-     print("Random Combination Ideas:")
+    print("Random Combination Ideas:")
     random_ideas = generate_combination_ideas(word_lists, num_ideas=5)
     for idea in random_ideas:
         print(f"- {idea}")
 
-      print("\nAll Possible Combinations (limited):")
+    print("\nAll Possible Combinations (limited):")
     all_ideas = generate_all_possible_combinations(word_lists, max_combinations=10)
     for idea in all_ideas:
         print(f"- {idea}")
 
-        import random 
-        import tkinter as tk
-        from tkinter import messagebox, simpledialog
+   import tkinter as tk
+    from tkinter import messagebox, simpledialog
 
-        class DrawingIdeaLibrary:{
-         def __init__(self):
+    class DrawingIdeaLibrary:
+        def __init__(self):
 
-                self.subjects = [
-           ", "robot", "tree", "castle", "dragon", "fox", "alien", "wizard", "owl", "fish"
-        ]
-        self.actions = [
-            "dancing", "sleeping", "flying", "reading", "singing", "exploring", "playing chess", "painting", "cooking", "surfing"
-        ]
-        self.styles = [
-            "in a cartoon style", "as a silhouette", "with neon colors", "in the rain", "as a doodle", "cubist", "minimalist", "realistic", "abstract", "pixel art"
-        ]
-        self.moods = [
-            "happy", "mysterious", "melancholic", "energetic", "dreamy", "spooky", "peaceful", "chaotic", "romantic", "adventurous"
-        ]
-        self.settings = [
-            "in a forest", "on the moon", "underwater", "in a city", "at a carnival", "in a desert", "on a mountain", "in a library", "in a futuristic world", "in a magical land"
-        ]
-        self.mediums = [
-            "watercolor", "digital", "charcoal", "collage", "ink", "crayon", "spray paint", "colored pencil", "marker", "oil paint"
-        ]
-        self.extra_phrases = [
-            "with vibrant colors", "in a surreal manner", "featuring intricate details", "under a starry sky", "with dynamic poses", "inspired by nature", "with a touch of humor", "in black and white", "with glowing effects", "in a vintage style" "cat"
-        ]
+            self.subjects = ["cat", "robot", "tree", "castle", "dragon", "fox", "alien", "wizard", "owl", "fish"]
+            self.actions = [
+                "dancing", "sleeping", "flying", "reading", "singing", "exploring", "playing chess", "painting", "cooking", "surfing"
+            ]
+            self.styles = [
+                "in a cartoon style", "as a silhouette", "with neon colors", "in the rain", "as a doodle", "cubist", "minimalist", "realistic", "abstract", "pixel art"
+            ]
+            self.moods = [
+                "happy", "mysterious", "melancholic", "energetic", "dreamy", "spooky", "peaceful", "chaotic", "romantic", "adventurous"
+            ]
+            self.settings = [
+                "in a forest", "on the moon", "underwater", "in a city", "at a carnival", "in a desert", "on a mountain", "in a library", "in a futuristic world", "in a magical land"
+            ]
+            self.mediums = [
+                "watercolor", "digital", "charcoal", "collage", "ink", "crayon", "spray paint", "colored pencil", "marker", "oil paint"
+            ]
+            self.extra_phrases = [
+                "with vibrant colors", "in a surreal manner", "featuring intricate details", "under a starry sky", "with dynamic poses", "inspired by nature", "with a touch of humor", "in black and white", "with glowing effects", "in a vintage style", "cat"
+            ]
 
-    def get_all_categories(self):
-        return {
-            "subjects": self.subjects,
-            "actions": self.actions,
-            "styles": self.styles,
-            "moods": self.moods,
-            "settings": self.settings,
-            "mediums": self.mediums,
-            "extra_phrases": self.extra_phrases
-        }
- 
+        def get_all_categories(self):
+            return {
+                "subjects": self.subjects,
+                "actions": self.actions,
+                "styles": self.styles,
+                "moods": self.moods,
+                "settings": self.settings,
+                "mediums": self.mediums,
+                "extra_phrases": self.extra_phrases
+            }
+
         def add_item(self, category, item):
-        if category in self.get_all_categories():
-            if item not in self.get_all_categories()[category]:
-                self.get_all_categories()[category].append(item)
+            cat_list = getattr(self, category, None)
+            if cat_list is not None and item not in cat_list:
+                cat_list.append(item)
                 return True
-        return False
+            return False
 
-
-    def remove_item(self, category, item):
-        if category in self.get_all_categories():
-            if item in self.get_all_categories()[category]:
-                self.get_all_categories()[category].remove(item)
+        def remove_item(self, category, item):
+            cat_list = getattr(self, category, None)
+            if cat_list is not None and item in cat_list:
+                cat_list.remove(item)
                 return True
-        return False
+            return False
 
-        def generate_idea(self): (self, fixed_subject=None, fixed_action=None, fixed_style=None, fixed_mood=None, fixed_setting=None, fixed_medium=None):
-        subject = fixed_subject if fixed_subject else random.choice(self.subjects)
-        action = fixed_action if fixed_action else random.choice(self.actions)
-        style = fixed_style if fixed_style else random.choice(self.styles)
-        mood = fixed_mood if fixed_mood else random.choice(self.moods)
-        setting = fixed_setting if fixed_setting else random.choice(self.settings)
-        medium = fixed_medium if fixed_medium else random.choice(self.mediums)
-        return (
-         f"Draw a {mood} {subject} {action} {style}, "
-            f"{setting}, using {medium}."
-        ), subject, action, style, mood, setting, medium
-          def generate_extra_phrase(self):
-        return random.choice(self.extra_phrases)
+        def generate_idea(self, fixed_subject=None, fixed_action=None, fixed_style=None, fixed_mood=None, fixed_setting=None, fixed_medium=None):
+            subject = fixed_subject if fixed_subject else random.choice(self.subjects)
+            action = fixed_action if fixed_action else random.choice(self.actions)
+            style = fixed_style if fixed_style else random.choice(self.styles)
+            mood = fixed_mood if fixed_mood else random.choice(self.moods)
+            setting = fixed_setting if fixed_setting else random.choice(self.settings)
+            medium = fixed_medium if fixed_medium else random.choice(self.mediums)
+            return (
+                f"Draw a {mood} {subject} {action} {style}, "
+                f"{setting}, using {medium}."
+            ), subject, action, style, mood, setting, medium
 
-       # GUI Application
-        class DrawingIdeaApp:
-    def __init__(self, root):
-        self.library = DrawingIdeaLibrary()
-        self.root = root
-        self.root.title("Drawing Idea Generator")
+        def generate_extra_phrase(self):
+            return random.choice(self.extra_phrases)
 
+    # GUI Application
+    class DrawingIdeaApp:
+        def __init__(self, root):
+            self.library = DrawingIdeaLibrary()
+            self.root = root
+            self.root.title("Drawing Idea Generator")
 
-        # Initialize current values
-        self.current_idea, self.current_subject, self.current_action, self.current_style, self.current_mood, self.current_setting, self.current_medium = self.library.generate_idea()
+            # Initialize current values
+            self.current_idea, self.current_subject, self.current_action, self.current_style, self.current_mood, self.current_setting, self.current_medium = self.library.generate_idea()
 
+            self.idea_label = tk.Label(root, text=self.current_idea, wraplength=400, padx=10, pady=10)
+            self.idea_label.pack(pady=20)
 
-        self.idea_label = tk.Label(root, text=self.current_idea, wraplength=400, padx=10, pady=10)
-        self.idea_label.pack(pady=20)
+            # Checkboxes for locking categories
+            self.lock_vars = {}
+            categories = ["subject", "action", "style", "mood", "setting", "medium"]
+            for cat in categories:
+                var = tk.BooleanVar()
+                chk = tk.Checkbutton(root, text=f"Lock {cat}", variable=var)
+                chk.pack(anchor="w", padx=20)
+                self.lock_vars[cat] = var
 
+            self.regen_button = tk.Button(root, text="Regenerate", command=self.on_regenerate)
+            self.regen_button.pack(pady=10)
 
-        # Checkboxes for locking categories
-        self.lock_vars = {}
-        categories = ["subject", "action", "style", "mood", "setting", "medium"]
-        for cat in categories:
-            var = tk.BooleanVar()
-            chk = tk.Checkbutton(root, text=f"Lock {cat}", variable=var)
-            chk.pack(anchor="w", padx=20)
-            self.lock_vars[cat] = var
+            self.add_more_button = tk.Button(root, text="Add More Words", command=self.on_add_more)
+            self.add_more_button.pack(pady=10)
 
-               self.regen_button = tk.Button(root, text="Regenerate", command=self.on_regenerate)
-        self.regen_button.pack(pady=10)
+            self.library_button = tk.Button(root, text="View/Edit Library", command=self.open_library_window)
+            self.library_button.pack(pady=10)
 
+        def on_regenerate(self):
+            fixed_subject = self.current_subject if self.lock_vars["subject"].get() else None
+            fixed_action = self.current_action if self.lock_vars["action"].get() else None
+            fixed_style = self.current_style if self.lock_vars["style"].get() else None
+            fixed_mood = self.current_mood if self.lock_vars["mood"].get() else None
+            fixed_setting = self.current_setting if self.lock_vars["setting"].get() else None
+            fixed_medium = self.current_medium if self.lock_vars["medium"].get() else None
 
-        self.add_more_button = tk.Button(root, text="Add More Words", command=self.on_add_more)
-        self.add_more_button.pack(pady=10)
-
-          self.library_button = tk.Button(root, text="View/Edit Library", command=self.open_library_window)
-        self.library_button.pack(pady=10)
-
-
-    def on_regenerate(self):
-        fixed_subject = self.current_subject if self.lock_vars["subject"].get() else None
-        fixed_action = self.current_action if self.lock_vars["action"].get() else None
-        fixed_style = self.current_style if self.lock_vars["style"].get() else None
-        fixed_mood = self.current_mood if self.lock_vars["mood"].get() else None
-        fixed_setting = self.current_setting if self.lock_vars["setting"].get() else None
-        fixed_medium = self.current_medium if self.lock_vars["medium"].get() else None
-
-         self.current_idea, self.current_subject, self.current_action, self.current_style, self.current_mood, self.current_setting, self.current_medium = self.library.generate_idea(
-            fixed_subject, fixed_action, fixed_style, fixed_mood, fixed_setting, fixed_medium
+            self.current_idea, self.current_subject, self.current_action, self.current_style, self.current_mood, self.current_setting, self.current_medium = self.library.generate_idea(
+                fixed_subject, fixed_action, fixed_style, fixed_mood, fixed_setting, fixed_medium
             )
-  self.idea_label.config(text=self.current_idea)
+            self.idea_label.config(text=self.current_idea)
 
-      def on_add_more(self):
-        current_text = self.idea_label.cget("text")
-        extra = self.library.generate_extra_phrase()
-        new_text = current_text + " " + extra + "."
-        self.idea_label.config(text=new_text)
-        # Note: Adding more doesn't update current_*, so regenerating will reset to base
+        def on_add_more(self):
+            current_text = self.idea_label.cget("text")
+            extra = self.library.generate_extra_phrase()
+            new_text = current_text + " " + extra + "."
+            self.idea_label.config(text=new_text)
+            # Note: Adding more doesn't update current_*, so regenerating will reset to base
 
         def open_library_window(self):
-        lib_win = tk.Toplevel(self.root)
-        lib_win.title("Library Editor")
+            lib_win = tk.Toplevel(self.root)
+            lib_win.title("Library Editor")
 
- categories = self.library.get_all_categories()
-        row = 0
-        for cat_name, items in categories.items():
-            tk.Label(lib_win, text=f"{cat_name.capitalize()}:", font=("Arial", 12, "bold")).grid(row=row, column=0, sticky="w", padx=10, pady=5)
-            row += 1
-            listbox = tk.Listbox(lib_win, height=5, width=50)
-            for item in items:
+            categories = self.library.get_all_categories()
+            row = 0
+            for cat_name, items in categories.items():
+                tk.Label(lib_win, text=f"{cat_name.capitalize()}:", font=("Arial", 12, "bold")).grid(row=row, column=0, sticky="w", padx=10, pady=5)
+                row += 1
+                listbox = tk.Listbox(lib_win, height=5, width=50)
+                for item in items:
+                    listbox.insert(tk.END, item)
+                listbox.grid(row=row, column=0, columnspan=2, padx=10, pady=5)
+                row += 1
+
+                add_button = tk.Button(lib_win, text="Add", command=lambda c=cat_name, lb=listbox: self.add_to_category(c, lb))
+                add_button.grid(row=row, column=0, pady=5)
+
+                remove_button = tk.Button(lib_win, text="Remove", command=lambda c=cat_name, lb=listbox: self.remove_from_category(c, lb))
+                remove_button.grid(row=row, column=1, pady=5)
+                row += 1
+
+        def add_to_category(self, category, listbox):
+            item = simpledialog.askstring("Add Item", f"Enter new {category[:-1]}:")
+            if item and self.library.add_item(category, item):
                 listbox.insert(tk.END, item)
-            listbox.grid(row=row, column=0, columnspan=2, padx=10, pady=5)
-            row += 1
+                messagebox.showinfo("Success", f"Added '{item}' to {category}.")
+            elif item:
+                messagebox.showwarning("Warning", f"'{item}' already exists in {category}.")
 
-                 add_button = tk.Button(lib_win, text="Add", command=lambda c=cat_name, lb=listbox: self.add_to_category(c, lb))
-            add_button.grid(row=row, column=0, pady=5)
+        def remove_from_category(self, category, listbox):
+            selected = listbox.curselection()
+            if selected:
+                item = listbox.get(selected[0])
+                if self.library.remove_item(category, item):
+                    listbox.delete(selected[0])
+                    messagebox.showinfo("Success", f"Removed '{item}' from {category}.")
+            else:
+                messagebox.showwarning("Warning", "Please select an item to remove.")
 
-            remove_button = tk.Button(lib_win, text="Remove", command=lambda c=cat_name, lb=listbox: self.remove_from_category(c, lb))
-            remove_button.grid(row=row, column=1, pady=5)
-            row += 1
+        if __name__ == "__main__":
+            root = tk.Tk()
+            app = DrawingIdeaApp(root)
+            root.mainloop()
 
-               def add_to_category(self, category, listbox):
-        item = simpledialog.askstring("Add Item", f"Enter new {category[:-1]}:")
-        if item and self.library.add_item(category, item):
-            listbox.insert(tk.END, item)
-            messagebox.showinfo("Success", f"Added '{item}' to {category}.")
-        elif item:
-            messagebox.showwarning("Warning", f"'{item}' already exists in {category}.")
+    import random
+    import tkinter as tk
 
-              def remove_from_category(self, category, listbox):
-        selected = listbox.curselection()
-        if selected:
-            item = listbox.get(selected[0])
-            if self.library.remove_item(category, item):
-                listbox.delete(selected[0])
-                messagebox.showinfo("Success", f"Removed '{item}' from {category}.")
+    class DrawingIdeaGenerator:
+        def __init__(self):
+            self.subjects = ["cat", "robot", "tree", "castle", "dragon", "fox", "alien", "wizard", "owl", "fish"]
+            self.actions = ["dancing", "sleeping", "flying", "reading", "singing", "exploring", "playing chess", "painting", "cooking", "surfing"]
+            self.styles = ["in a cartoon style", "as a silhouette", "with neon colors", "in the rain", "as a doodle", "cubist", "minimalist", "realistic", "abstract", "pixel art"]
+            self.moods = ["happy", "mysterious", "melancholic", "energetic", "dreamy", "spooky", "peaceful", "chaotic", "romantic", "adventurous"]
+            self.settings = ["in a forest", "on the moon", "underwater","in a city", "at a carnival", "in a desert", "on a mountain", "in a library", "in a futuristic world", "in a magical land"]
+            self.mediums = ["watercolor", "digital", "charcoal", "collage", "ink", "crayon", "spray paint", "colored pencil", "marker", "oil paint"]
+  def generate(self, include_subject=True, include_action=True, include_style=True, include_mood=True, include_setting=True, include_medium=True):
+            """Generate a drawing prompt, excluding categories as requested."""
+            parts = []
 
-              else:
-            messagebox.showwarning("Warning", "Please select an item to remove.")
+            if include_mood:
+                parts.append(random.choice(self.moods))
+            if include_subject:
+                parts.append(random.choice(self.subjects))
+            if include_action:
+                parts.append(random.choice(self.actions))
+            if include_style:
+                parts.append(random.choice(self.styles))
 
-            if __name__ == "__main__":
-    root = tk.Tk()
-    app = DrawingIdeaApp(root)
-    root.mainloop()
+            prompt = "Draw "
+            if parts:
+                prompt += " ".join(parts)
+            else:
+                prompt += "something interesting"
 
-import random 
-import tkinter as tk 
+            if include_setting:
+                prompt += ", " + random.choice(self.settings)
 
-class DrawingIdeaGenerator:
-    def __init__(self):
-        self.subjects = [
-            "cat", "robot", "tree", "castle", "dragon", "fox", "alien", "wizard", "owl", "fish"
-        ]
-        self.actions = [
-            "dancing", "sleeping", "flying", "reading", "singing", "exploring", "playing chess", "painting", "cooking", "surfing"
-        ]
-        self.styles = [
-            "in a cartoon style", "as a silhouette", "with neon colors", "in the rain", "as a doodle", "cubist", "minimalist", "realistic", "abstract", "pixel art"
-        ]
-        self.moods = [
-            "happy", "mysterious", "melancholic", "energetic", "dreamy", "spooky", "peaceful", "chaotic", "romantic", "adventurous"
-        ]
-        self.settings = [
-            "in a forest", "on the moon", "underwater", "in a city", "at a carnival", "in a desert", "on a mountain", "in a library", "in a futuristic world", "in a magical land"
-        ]
-        self.mediums = [
-            "watercolor", "digital", "charcoal", "collage", "ink", "crayon", "spray paint", "colored pencil", "marker", "oil paint"
-        ]
+            if include_medium:
+                prompt += ", using " + random.choice(self.mediums)
 
-
-          def generate(self, include_subject=True, include_action=True, include_style=True, include_mood=True, include_setting=True, include_medium=True):
-        """Generate a drawing prompt, excluding categories as requested."""
-        parts = []
-
-
-           if include_mood:
-            parts.append(random.choice(self.moods))
-        if include_subject:
-            parts.append(random.choice(self.subjects))
-        if include_action:
-            parts.append(random.choice(self.actions))
-        if include_style:
-            parts.append(random.choice(self.styles))
-
-              prompt = "Draw "
-        if parts:
-            prompt += " ".join(parts)
-        else:
-            prompt += "something interesting"
-
-        if include_setting:
-            prompt += ", " + random.choice(self.settings)
-
-        if include_medium:
-            prompt += ", using " + random.choice(self.mediums)
-
-        prompt += "."
-        return prompt
+            prompt += "."
+            return prompt
 
 
        class DrawingIdeaApp:
