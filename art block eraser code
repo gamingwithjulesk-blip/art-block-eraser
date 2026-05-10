@@ -360,6 +360,7 @@ if __name__ == "__main__":
             return (
                 f"Draw a {mood} {subject} {action} {style}, "
                 f"{setting}, using {medium}."
+                
             ), subject, action, style, mood, setting, medium
 
         def generate_extra_phrase(self):
